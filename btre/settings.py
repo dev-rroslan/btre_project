@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['re.undionline.com', '127.0.0.1']
+ALLOWED_HOSTS = ['re.undionline.com', '127.0.0.1','139.59.124.147','localhost']
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
