@@ -141,18 +141,15 @@ MESSAGE_TAGS = {
 }
 
 import os
-import sys
 
 home_dir = os.path.expanduser("~")
-devrroslan_dir = os.path.join(home_dir, "devrroslan")
+local_settings_path = os.path.join(home_dir, "local_settings.py")
 
-try:
-    sys.path.insert(0, devrroslan_dir)
-    from local_settings import *
-except ImportError:
-    if not os.environ.get("PRODUCTION"):
+if os.path.exists(local_settings_path):
+    try:
+        with open(local_settings_path) as f:
+            code = compile(f.read(), local_settings_path, 'exec')
+            exec(code, globals())
+    except ImportError:
         pass
-finally:
-    sys.path.remove(devrroslan_dir)
-
 
