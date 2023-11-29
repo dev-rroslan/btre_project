@@ -140,7 +140,19 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
+import os
+import sys
+
+home_dir = os.path.expanduser("~")
+devrroslan_dir = os.path.join(home_dir, "devrroslan")
+
 try:
+    sys.path.insert(0, devrroslan_dir)
     from local_settings import *
 except ImportError:
-    pass
+    if not os.environ.get("PRODUCTION"):
+        pass
+finally:
+    sys.path.remove(devrroslan_dir)
+
+
