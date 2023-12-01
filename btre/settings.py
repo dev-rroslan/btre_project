@@ -87,9 +87,9 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'btredb',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': 'btre_prod',
+        'USER': 'dbadmin',
+        'PASSWORD': 'RAMble656.',
         'HOST': 'localhost'
     }
 }
@@ -142,25 +142,4 @@ MESSAGE_TAGS = {
 
 # btre/settings.py
 
-import os
-import sys
-
-# Use the existing definition of BASE_DIR if available
-try:
-    BASE_DIR
-except NameError:
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Add the directory containing your local_settings.py file to Python path
-APPS_DIR = os.path.join(BASE_DIR, '..')  # Go up one level to /home/djadmin/apps
-sys.path.append(APPS_DIR)
-
-# Now you can import local_settings.py
-try:
-    from local_settings import *
-except ImportError:
-    pass
-
-
-# ...S
 
