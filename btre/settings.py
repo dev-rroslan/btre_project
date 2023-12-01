@@ -143,6 +143,7 @@ MESSAGE_TAGS = {
 # btre/settings.py
 
 import os
+import sys
 
 # Use the existing definition of BASE_DIR if available
 try:
