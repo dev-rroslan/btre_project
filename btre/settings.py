@@ -140,20 +140,10 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-import os
-
-# ...
-
-project_dir = "/home/djadmin/apps/btre_project"
-local_settings_path = os.path.join("/home/djadmin", "local_settings.py")
-
-if os.path.exists(local_settings_path):
-    try:
-        with open(local_settings_path) as f:
-            code = compile(f.read(), local_settings_path, 'exec')
-            exec(code, globals())
-    except ImportError:
-        pass
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
 # ...
 
