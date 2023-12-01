@@ -140,10 +140,19 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+import os
 
 # ...
+
+local_settings_path = os.path.expanduser("~/local_settings.py")
+
+if os.path.exists(local_settings_path):
+    try:
+        with open(local_settings_path) as f:
+            code = compile(f.read(), local_settings_path, 'exec')
+            exec(code, globals())
+    except ImportError:
+        pass
+
+# ...S
 
