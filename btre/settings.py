@@ -140,9 +140,15 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
+import os
 import sys
 
-sys.os.path.join(BASE_DIR, '..') #to app directory where local_settings.py is
+BASE_DIR = '/home/djadmin/apps/btre_project'
+
+# Get the parent directory of BASE_DIR
+APP_DIR = os.path.join(BASE_DIR, '..')
+
+sys.path.append(APP_DIR)
 
 try:
     from apps.local_settings import *
