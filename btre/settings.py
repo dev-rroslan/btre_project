@@ -145,7 +145,7 @@ import sys
 sys.os.path.join(BASE_DIR, '..') #to app directory where local_settings.py is
 
 try:
-    from local_settings import *
+    from apps.local_settings import *
 except ImportError:
     pass
 
