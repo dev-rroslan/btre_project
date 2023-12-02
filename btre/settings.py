@@ -25,13 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-""" SECRET_KEY ='django-insecure-0omu_$70x62+giq!k46x_ww=k6e$-(-8i(p!%4206h5v8t%3@w'
-DEBUG = True """
+SECRET_KEY ='django-insecure-0omu_$70x62+giq!k46x_ww=k6e$-(-8i(p!%4206h5v8t%3@w'
+DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-""" ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hartanahdecor.com', '188.166.251.247']  # <-- Updated!
-CSRF_TRUSTED_ORIGINS = ['https://188.166.251.247', 'https://hartanahdecor.com'] """
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hartanahdecor.com', '188.166.251.247']  # <-- Updated!
+CSRF_TRUSTED_ORIGINS = ['https://188.166.251.247', 'https://hartanahdecor.com']
 
 # Application definition
 
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-""" DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'btredb',
@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'btre.wsgi.application'
         'PASSWORD': 'postgres',
         'HOST': 'localhost'
     }
-} """
+}
 
 
 # Password validation
