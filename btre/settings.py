@@ -30,8 +30,8 @@ DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'hartanahdecor.com', '188.166.251.247']  # <-- Updated!
-CSRF_TRUSTED_ORIGINS = ['https://188.166.251.247', 'https://hartanahdecor.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['']
 
 # Application definition
 
