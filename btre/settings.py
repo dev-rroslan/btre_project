@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY ='ne2hr=@!y^2n6z&m#b@9=(0805nzg-+^95f2jexn!y2xpn7ld1'
+SECRET_KEY ='django-insecure-0omu_$70x62+giq!k46x_ww=k6e$-(-8i(p!%4206h5v8t%3@w'
 DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -87,9 +87,9 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'btre_prod',
-        'USER': 'dbadmin',
-        'PASSWORD': 'RAMble656.',
+        'NAME': 'btredb',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost'
     }
 }
@@ -140,6 +140,15 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-# btre/settings.py
+import sys
+
+sys.os.path.join(BASE_DIR, '..') #to app directory where local_settings.py is
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
+ 
 
 
