@@ -140,18 +140,9 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-import os
-import sys
-
-BASE_DIR = '/home/djadmin/apps/btre_project'
-
-# Get the parent directory of BASE_DIR
-APP_DIR = os.path.join(BASE_DIR, '..')
-
-sys.path.append(APP_DIR)
 
 try:
-    from apps.local_settings import *
+    from local_settings import *
 except ImportError:
     pass
 
